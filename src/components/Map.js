@@ -6,7 +6,7 @@ import { loadInitialMap } from "./util";
 
 import particles from "./wcofs_drift_test_v0.csv";
 
-function Map({}) {
+function Map() {
   const mapContainer = useRef(null);
   const map = useRef(null);
 

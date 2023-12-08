@@ -22,7 +22,7 @@ export const loadInitialMap = function (mapContainer, map, particles) {
       .map((d) => {
         const coords = d[1].map((e) => [e.lon, e.lat]);
 
-        if (!d[0].length) return;
+        if (!d[0].length) return null;
 
         return {
           type: "Feature",
