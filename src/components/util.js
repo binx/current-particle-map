@@ -9,8 +9,12 @@ export const loadInitialMap = function (mapContainer, map, particles) {
     style: "mapbox://styles/binx/cleyiayif000101r4z2u9y49q",
   });
 
+  console.log(particles);
+
   const latExtent = extent(particles, (d) => d.lat);
   const lonExtent = extent(particles, (d) => d.lon);
+
+  console.log(latExtent, lonExtent);
 
   map.current.fitBounds([
     [lonExtent[0], latExtent[0]],
@@ -21,8 +25,6 @@ export const loadInitialMap = function (mapContainer, map, particles) {
     const parts = groups(particles, (d) => d.id)
       .map((d) => {
         const coords = d[1].map((e) => [e.lon, e.lat]);
-
-        if (!d[0].length) return null;
 
         return {
           type: "Feature",
@@ -57,7 +59,7 @@ export const loadInitialMap = function (mapContainer, map, particles) {
             property: "id",
             stops: [
               [1, "#ff0"],
-              [100, "#f0f"],
+              [40, "#f0f"],
             ],
           },
           "line-width": 2,
